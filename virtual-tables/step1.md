@@ -1,19 +1,28 @@
-In this step you will verify that Cassandra has been installed and is running as a service.
-Next, you will connect using *cqlsh* and create a keyspace and table.
+First verify that Cassandra is properly installed on this machine and is running
+as a system service. To do so, you can ask your operating system's daemon
+manager:
 
-During startup, this scenario uses *apt-get* to install and start a single Cassandra node running as a service.
-This process may take a few minutes. Wait until you see `Cassandra has started!` before you continue.
+```
+systemctl status cassandra --no-pager
+```{{execute T1}}
 
-Once Cassandra has started, click to verify the cluster status with *nodetool*.
+Look for a green circle and `Active (running)` in the output.
+
+Alternatively, you can ask `nodetool`, Cassandra's utility for everything
+node-related: the output of
+
 ```
 nodetool status
-```{{execute}}
+```{{execute T1}}
 
----
-<p>
-<span style="color:teal">**Status:**</span> 
-Look at the first two characters of the status. 
-Each character has an individual meaning. 
-The sequence `UN` means the node's status is `Up` and state is `Normal`.
-</p>
----
+should tell you that the current node (which forms a cluster by itself)
+is in a status "UN" (meaning Up and Normal).
+
+_Make sure Cassandra is completely started before proceeding._
+
+You will use `cqlsh` several times during this exercise. So let us open a
+`cqlsh` console and keep it running on the second terminal:
+
+```
+cqsh
+```{{execute T2}}

@@ -15,8 +15,33 @@
         "text": "step1.md"
       },
       {
-        "title": "Another Step",
+        "title": "Inspect tables",
         "text": "step2.md"
+      },
+      {
+        "title": "Changing tables",
+        "text": "step3.md"
+      },
+      {
+        "title": "Table 'clients'",
+        "text": "step4.md"
+      },
+      {
+        "title": "Checking read timeout",
+        "text": "step5.md"
+      },
+
+      {
+        "title": "Changing read timeout!",
+        "text": "step6.md"
+      },
+      {
+        "title": "Checking read timeout, again",
+        "text": "step7.md"
+      },
+      {
+        "title": "Restarting Cassandra",
+        "text": "step8.md"
       },
       {
         "title": "Test Your Understanding",
@@ -33,7 +58,11 @@
     }
   },
   "environment": {
-    "uilayout": "terminal"
+    "uilayout": "terminal",
+    "terminals": [
+      {"name": "CQL console", "target": "host01"},
+      {"name": "Client console", "target": "host01"}
+    ]
   },
   "backend": {
     "imageid": "ubuntu:1804"
