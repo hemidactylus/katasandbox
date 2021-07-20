@@ -11,7 +11,7 @@ systemctl status cassandra --no-pager
 
 Look for a green circle and `Active (running)` in the output.
 
-Alternatively, you can ask `nodetool`, Cassandra's utility for everything
+Even better, you can ask `nodetool`, Cassandra's utility for everything
 node-related: the output of
 
 ```

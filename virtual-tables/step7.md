@@ -8,7 +8,7 @@ if this resets the timeout to the default of 5 seconds:
 systemctl restart cassandra
 ```{{execute T1}}
 
-Wait until `nodetool status` reports the node as UN (=Up, Normal):
+Wait until `nodetool status` reports the node back to UN (=Up, Normal):
 ```
 nodetool status
 ```{{execute T1}}

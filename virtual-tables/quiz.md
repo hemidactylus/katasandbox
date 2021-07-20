@@ -9,10 +9,10 @@ with a short quiz!
 ( ) True
 (*) False
 
->>3. In Cassandra 4.0 you can alter a setting by...<<
-(*) using `nodetool`
-( ) writing into the `settings` virtual table
-(*) changing `cassandra.yaml` and restarting
+>>3. In Cassandra 4.0 you CANNOT alter a setting by...<<
+( ) using `nodetool`
+(*) writing into the `settings` virtual table
+( ) changing `cassandra.yaml` and restarting
 
 >>4. A virtual table is backed by...<<
 ( ) Distributed SSTables
@@ -28,3 +28,7 @@ with a short quiz!
 ( ) True
 (*) False
 
+>>7. If you change a setting, the change is NOT reflected into...<<
+( ) the output of `nodetool`
+(*) the `cassandra.yaml` configuration file
+( ) the virtual table `settings`
