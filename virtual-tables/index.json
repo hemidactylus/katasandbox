@@ -36,12 +36,8 @@
         "text": "step6.md"
       },
       {
-        "title": "Checking read timeout, again",
-        "text": "step7.md"
-      },
-      {
         "title": "Restarting Cassandra",
-        "text": "step8.md"
+        "text": "step7.md"
       },
       {
         "title": "Test Your Understanding",

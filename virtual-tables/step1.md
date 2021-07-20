@@ -23,6 +23,15 @@ is in a status "UN" (meaning Up and Normal).
 
 _Make sure Cassandra is completely started before proceeding._
 
+Please run the following to initialize the other terminals of this scenario:
+```
+echo Initializing terminal 2
+```{{execute T2}}
+
+```
+echo Initializing terminal 3
+```{{execute T3}}
+
 You will use `cqlsh` several times during this exercise. So let us open a
 `cqlsh` console and keep it running on the second terminal:
 

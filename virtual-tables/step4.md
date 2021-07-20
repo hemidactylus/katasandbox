@@ -8,7 +8,7 @@ SELECT port, connection_stage, driver_name, protocol_version, username FROM clie
 Wait a minute ... who are they? It turns out that `cqlsh` uses the Python drivers
 and that, internally, it keeps two connections on two different ports
 (whose exact number is dynamically determined based on the available ones).
-So you are simply looking at the connection between your own `cqlsh` to the node.
+So you are simply looking at the connection between your own `cqlsh` and the node.
 
 Now let's start a Python interpreter shell and connect to the node from there.
 Go to the third terminal and type
@@ -46,4 +46,4 @@ the following query:
 SELECT address, protocol_version, username FROM clients WHERE protocol_version < 5 ALLOW FILTERING ;
 ```{{execute T2}}
 
-Recall that on a virtual table you don't have to worry about full-table scans.
+Recall that for virtual tables you don't have to worry about full-cluster scans.

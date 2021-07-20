@@ -33,7 +33,7 @@ programmatically access the whole configuration as specified in file
 SELECT * FROM settings;
 ```{{execute T2}}
 
-How many rows does the table contain? (Hint: press space to get the next page
+How many rows does the table contain? (Hint: press _Enter_ to get the next page
 of results).
 
 Try looking for a particular setting:
