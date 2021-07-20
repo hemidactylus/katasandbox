@@ -13,18 +13,12 @@ Wait until `nodetool status` reports the node as UN (=Up, Normal):
 nodetool status
 ```{{execute T1}}
 
-You will have to start `cqlsh` again after it lost the connection and closed
-itself during the restart:
-```
-cqlsh
-```{{execute T2}}
-
 Now let's look at the timeout value as read through the `settings` virtual table:
 ```
 SELECT * FROM system_views.settings WHERE name = 'read_request_timeout_in_ms';
 ```{{execute T2}}
 
-Or, equivalently, look at the output you get now from
+Equivalently, look at the output you get now from
 ```
 nodetool gettimeout read
 ```{{execute T1}}

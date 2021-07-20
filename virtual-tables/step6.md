@@ -14,6 +14,8 @@ decide to change this setting on the fly, with:
 nodetool settimeout read 15000
 ```{{execute T1}}
 
+(remember writing on a virtual table is not supported... yet)
+
 Now, does the `cassandra.yaml` automatically reflect this change?
 ```
 grep "read_request_timeout_in_ms:" /etc/cassandra/cassandra.yaml
