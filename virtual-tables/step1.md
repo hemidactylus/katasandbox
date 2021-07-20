@@ -1,3 +1,6 @@
+_Note: wait until you see the message "Cassandra has started" in the
+terminal before proceeding._
+
 First verify that Cassandra is properly installed on this machine and is running
 as a system service. To do so, you can ask your operating system's daemon
 manager:
@@ -24,5 +27,5 @@ You will use `cqlsh` several times during this exercise. So let us open a
 `cqlsh` console and keep it running on the second terminal:
 
 ```
-cqsh
+cqlsh
 ```{{execute T2}}
