@@ -29,13 +29,13 @@ session = cluster.connect()
 this scenario).
 
 In the Python REPL, try the following loop - which achieves the same effect
-as the query you ran earlier in `cqlsh`:
+as the query you ran earlier in `cqlsh` - you will have to **press Enter** to
+make it run:
 ```
 rows = session.execute('SELECT port, connection_stage, driver_name, protocol_version FROM system_views.clients')
 for row in rows:
     print(row.port, row.connection_stage,
           row.driver_name, row.protocol_version)
-
 ```{{execute T3}}
 
 Now how many rows are there? Look at the ports used and the protocol versions:

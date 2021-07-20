@@ -17,6 +17,8 @@ Now let's look at the timeout value as read through the `settings` virtual table
 ```
 SELECT * FROM system_views.settings WHERE name = 'read_request_timeout_in_ms';
 ```{{execute T2}}
+(Note: you may have to try the command again if the node appears to be still
+starting).
 
 Equivalently, look at the output you get now from
 ```
