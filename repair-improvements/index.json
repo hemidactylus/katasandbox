@@ -1,6 +1,6 @@
 {
-  "title": "Repair Improvements 01",
-  "description": "Learn how to manage incremental repair in a Cassandra 4.0 cluster 01",
+  "title": "Repair Improvements 02",
+  "description": "Learn how to manage incremental repair in a Cassandra 4.0 cluster 02",
   "difficulty": "Medium",
   "time": "20 minutes",
   "details": {
@@ -38,10 +38,12 @@
   "environment": {
     "uilayout": "terminal",
     "terminals": [
-      {"name": "NodeA Console", "target": "host01"},
-      {"name": "NodeA CQLSH", "target": "host01"},
-      {"name": "NodeB Console", "target": "host02"},
-      {"name": "NodeB CQLSH", "target": "host02"}
+      {"name": "Node1 Admin", "target": "host01"},
+      {"name": "Node1 Console", "target": "host01"},
+      {"name": "Node1 CQLSH", "target": "host01"},
+      {"name": "Node2 Admin", "target": "host02"},
+      {"name": "Node2 Console", "target": "host02"},
+      {"name": "Node2 CQLSH", "target": "host02"}
     ]
   },
   "backend": {
