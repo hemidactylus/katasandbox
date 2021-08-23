@@ -61,7 +61,7 @@ on node 1. First let us create a keyspace with replication factor of two,
 i.e. such that _all rows_ be replicated on _both nodes_:
 ```
 CREATE KEYSPACE chemistry WITH REPLICATION = {'class': 'SimpleStrategy', 'replication_factor': 2};
-```{{execute T3}}
+```{{execute T4}}
 
 Set the newly-created keyspace as the default one for subsequent commands:
 ```
@@ -99,3 +99,9 @@ and then count how many are there:
 ```
 SELECT COUNT(*) FROM elements;
 ```{{execute T7}}
+
+### Recap
+
+We have created a table and inserted about a hundred rows in it;
+the table is replicated, in its entirety, on each of the two nodes
+that form the cluster.
