@@ -5,7 +5,6 @@
   "time": "20 minutes",
   "details": {
     "assets": {
-    "assets": {
         "host01": [
             {"file": "wait.sh", "target": "/usr/local/bin/", "chmod": "+x"},
             {"file": "delete_nongases.cql", "target": "/root/"},
