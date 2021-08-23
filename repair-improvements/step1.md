@@ -1,6 +1,6 @@
 This scenario requires a two-node cluster, that has been created for you.
-Wait until the terminal prints a message such as _"Cassandra Cluster with nodes
-`<IP_node_1>` and `<IP_node_2>` has started"_ before proceeding.
+Wait until the terminal prints a message such as "_Cassandra Cluster with nodes_
+`<IP_node_1>` _and_ `<IP_node_2>` _has started_" before proceeding.
 
 Verify the cluster is up and running with
 ```
@@ -10,7 +10,8 @@ The output should list _two_ nodes, each in the `UN` (Up, Normal) status.
 
 ### Initialization
 
-Let us initialize all terminals of the scenario by running the following:
+Let us initialize all terminals of the scenario (including connecting to the
+  two nodes) by running the following:
 ```
 echo Initializing terminal 2
 ssh $HOST1_IP
@@ -47,13 +48,13 @@ ssh $HOST2_IP
 Open the CQL Shell on both nodes:
 
 ```
-cqlsh
-```{{execute T3}}
+cqlsh $HOST1_IP
+```{{execute T4}}
 
 
 ```
-cqlsh
-```{{execute T6}}
+cqlsh $HOST2_IP
+```{{execute T7}}
 
 The following commands can be run on either CQL shells - we will work
 on node 1. First let us create a keyspace with replication factor of two,
@@ -65,7 +66,7 @@ CREATE KEYSPACE chemistry WITH REPLICATION = {'class': 'SimpleStrategy', 'replic
 Set the newly-created keyspace as the default one for subsequent commands:
 ```
 USE chemistry;
-```{{execute T3}}
+```{{execute T4}}
 
 Finally create a table for storing the periodic table of elements:
 ```
@@ -75,7 +76,7 @@ CREATE TABLE elements (
     atomic_mass DOUBLE,
     atomic_number INT
 );
-```{{execute T3}}
+```{{execute T4}}
 
 ### Data insertion
 
@@ -84,17 +85,17 @@ provided for use; to load its contents into the `elements` table, run the
 following CQL command:
 ```
 COPY elements FROM 'elements.csv' WITH HEADER=TRUE;
-```{{execute T3}}
+```{{execute T4}}
 
 To verify the insertion has succeeded, let's try to query the table (from
   node 2, why not?). Let's look at some of the rows,
 ```
 USE chemistry;
 SELECT * FROM elements LIMIT 10;
-```{{execute T6}}
+```{{execute T7}}
 
 and then count how many are there:
 
 ```
 SELECT COUNT(*) FROM elements;
-```{{execute T6}}
+```{{execute T7}}
