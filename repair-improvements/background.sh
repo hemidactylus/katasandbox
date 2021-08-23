@@ -42,6 +42,11 @@ echo 'PATH="$PATH:/usr/share/cassandra/bin:/usr/share/cassandra/tools/bin"' >> .
 echo '[[HOST1_IP]] node1' >> /etc/hosts   
 echo '[[HOST2_IP]] node2' >> /etc/hosts  
 
+echo "export HOST1_IP=\"[[HOST1_IP]]\"" >> .bashrc
+echo "export HOST2_IP=\"[[HOST2_IP]]\"" >> .bashrc
+export HOST1_IP="[[HOST1_IP]]"
+export HOST2_IP="[[HOST2_IP]]"
+
 ssh root@[[HOST1_IP]] '/usr/share/cassandra/bin/cassandra -R'
 ssh root@[[HOST1_IP]] 'while [ `grep "Starting listening for CQL clients" /usr/share/cassandra/logs/system.log | wc -l` -lt 1 ]; do sleep 10; done'
 

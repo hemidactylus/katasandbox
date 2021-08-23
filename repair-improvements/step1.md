@@ -13,26 +13,32 @@ The output should list _two_ nodes, each in the `UN` (Up, Normal) status.
 Let us initialize all terminals of the scenario by running the following:
 ```
 echo Initializing terminal 2
+ssh $HOST1_IP
 ```{{execute T2}}
 
 ```
 echo Initializing terminal 3
+ssh $HOST1_IP
 ```{{execute T3}}
 
 ```
 echo Initializing terminal 4
+ssh $HOST1_IP
 ```{{execute T4}}
 
 ```
 echo Initializing terminal 5
+ssh $HOST2_IP
 ```{{execute T5}}
 
 ```
 echo Initializing terminal 6
+ssh $HOST2_IP
 ```{{execute T6}}
 
 ```
 echo Initializing terminal 7
+ssh $HOST2_IP
 ```{{execute T7}}
 
 
@@ -73,8 +79,9 @@ CREATE TABLE elements (
 
 ### Data insertion
 
-A CSV file with the first 115 elements and their properties is provided for use;
-to load its contents into the `elements` table, run the following CQL command:
+A CSV file with the first hundred or so elements and their properties is
+provided for use; to load its contents into the `elements` table, run the
+following CQL command:
 ```
 COPY elements FROM 'elements.csv' WITH HEADER=TRUE;
 ```{{execute T3}}
@@ -82,6 +89,7 @@ COPY elements FROM 'elements.csv' WITH HEADER=TRUE;
 To verify the insertion has succeeded, let's try to query the table (from
   node 2, why not?). Let's look at some of the rows,
 ```
+USE chemistry;
 SELECT * FROM elements LIMIT 10;
 ```{{execute T6}}
 
