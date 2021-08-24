@@ -1,4 +1,5 @@
-This scenario requires a two-node cluster, that has been created for you.
+This scenario requires a two-node cluster, that is being created for you, which
+may take about three minutes.
 Wait until the terminal prints a message such as "_Cassandra Cluster with nodes_
 `<IP_node_1>` _and_ `<IP_node_2>` _has started_" before proceeding.
 

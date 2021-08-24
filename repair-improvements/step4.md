@@ -121,7 +121,7 @@ from Node1 over to this node: **incremental repair has done its job**.
 
 ### Recap
 
-We have repaired the table on Node2 in an incremental way and verified data
+We have incrementally repaired the table on Node2 and verified data
 consistency in the strictest way, i.e. by turning off the other node
 and querying the repaired one.
 

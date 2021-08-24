@@ -6,8 +6,8 @@ _hinted handoff_ mechanism to actually achieve data misalignment.
 ### Bringing Node2 down
 
 Let us gracefully bring Cassandra down on Node2 first:
-on its admin console, execute the following and wait for it to acknowledge
-successful shutdown:
+on its admin console, execute the following command and wait for
+it to acknowledge successful shutdown:
 ```
 nodetool stopdaemon
 ```{{execute T5}}
@@ -48,7 +48,7 @@ SELECT * FROM elements;
 But wait! Cassandra tries hard to maintain data consistency; so,
 while the rows were being deleted, Node1 noticed it could not propagate
 the tombstones to Node2 and saved them all in a "hints" file, ready for
-when Node2 will be reachable again. If we want to really incude a data mismatch,
+when Node2 will be reachable again. If we want to really induce a data mismatch,
 we have to delete the hints as well.
 
 Let us see the hints file that has just been created on Node1:
@@ -78,7 +78,7 @@ executable with
 
 Node startup will take about one minute and will be extensively logged in
 the console. Eventually the node will announce it is operational again
-in the ring ("JOINING: Finish joining ring");
+in the ring ("_JOINING: Finish joining ring_");
 you can also check in the usual way from Node1, looking for
 both nodes in status `UN` in the output of:
 ```

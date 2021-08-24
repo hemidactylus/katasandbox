@@ -1,5 +1,4 @@
-Let's consolidate what your learnt with this hands-on experience
-with a short quiz!
+Let's complement this scenario with a small quiz about what you have learnt!
 
 >>1. You can create, at any time, a virtual table that suits your needs.<<
 ( ) True

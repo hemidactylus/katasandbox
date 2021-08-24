@@ -1,7 +1,9 @@
-Intro para
+With the 4.0 release of Apache Cassandra™, there have been improvements to
+incremental repair: the process is now more reliable, robust, easier to manage
+and ready for use in production.
 
-In this scenario you will learn:
+In this scenario you will:
 
-- a
-- b
-- Setup & Create Data
+- populate a small cluster with data and introduce the need for repair
+- execute incremental repair and observe the data being reconciled between nodes
+- learn how to manage repairs on a Cassandra cluster.
