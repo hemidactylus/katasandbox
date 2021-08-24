@@ -32,7 +32,7 @@ separate pools of SSTables are improvements introduced in Cassandra 4.0.
 
 ### SSTable inspection
 
-Enough with the theory - let's look at the SSTables on Node2 now and at its
+Enough with the theory - let's look at the SSTables on Node2 now and at their
 "repair status", as we did in Step 2, by running
 the following on the console of Node2:
 ```

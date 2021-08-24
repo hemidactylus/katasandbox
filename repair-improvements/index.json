@@ -1,7 +1,7 @@
 {
   "title": "Repair Improvements",
   "description": "Learn how to manage incremental repair in a Cassandra 4.0 cluster",
-  "difficulty": "Medium",
+  "difficulty": "Intermediate",
   "time": "25 minutes",
   "details": {
     "assets": {

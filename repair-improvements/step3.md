@@ -90,7 +90,7 @@ nodetool status
 We have applied some mutations to the data on a table with one node
 down (and taken extra care to prevent other Cassandra self-healing mechanisms).
 At this point the SSTables on the two nodes are in disagreement: Node1
-"thinks" there are ten rows, Node2 "thinks" there are 112.
+"thinks" there are ten rows, Node2 still "thinks" there are 112.
 
 _NOTE:_ We avoid checking this with explicit queries since they would likely trigger
 the mechanism known as "read repair", designed to restore data consistency

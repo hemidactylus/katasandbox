@@ -49,12 +49,12 @@ ssh $HOST2_IP
 Open the CQL Shell on both nodes:
 
 ```
-cqlsh $HOST1_IP
+cqlsh $HOST1_IP    # Node1
 ```{{execute T4}}
 
 
 ```
-cqlsh $HOST2_IP
+cqlsh $HOST2_IP    # Node2
 ```{{execute T7}}
 
 The following commands can be run on either CQL shells - we will work

@@ -18,11 +18,6 @@ Let's complement this scenario with a small quiz about what you have learnt!
 (*) A transaction; three SSTable pools (repaired/pending/non-repaired)
 ( ) No transaction; three SSTable pools (repaired/pending/non-repaired)
 
->>4. (Manual) repair is initiated... <<
-( ) From within cqlsh
-( ) By launching a nodetool command - on any node, the outcome doesn't change
-(*) By launching a nodetool command - results depend on the node it's run in
-
->>5. The system.repairs table is a virtual table: its contents are potentially different on each node. <<
+>>4. The system.repairs table is a virtual table: its contents are potentially different on each node. <<
 ( ) True
 (*) False
