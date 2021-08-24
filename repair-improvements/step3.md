@@ -85,36 +85,18 @@ both nodes in status `UN` in the output of:
 nodetool status
 ```{{execute T3}}
 
-### Querying data
-
-Are the results for the `elements` table different on the two nodes?
-Let us count the rows as seen on the first node:
-```
-SELECT COUNT(*) FROM elements;
-```{{execute T4}}
-
-We would like to run the same query on Node2, but most likely, as a result
-of the restart, `cqlsh` has lost its connection: to ensure it is operational,
-exit `cqlsh`
-```
-EXIT;
-```{{execute T7}}
-and re-launch it:
-```
-cqlsh $HOST2_IP
-```{{execute T7}}
-
-Now we can compare the element count with the results from Node2 for the
-_same_ query:
-```
-USE chemistry;
-SELECT COUNT(*) FROM elements;
-```{{execute T7}}
-
 ### Recap
 
 We have applied some mutations to the data on a table with one node
-down (and extra care to prevent other Cassandra self-healing mechanisms).
-We could explicitly check that now data consistency is violated, i.e.
-the two nodes give different results from the same query. It is time to
-perform a repair!
+down (and taken extra care to prevent other Cassandra self-healing mechanisms).
+At this point the SSTables on the two nodes are in disagreement: Node1
+"thinks" there are ten rows, Node2 "thinks" there are 112.
+
+We avoid checking this with explicit queries since they would likely trigger
+the mechanism known as "read repair", designed to restore data consistency
+as a consequence of a read request and would void our efforts to artificially
+create the mismatch in the first place!
+
+Currently, data consistency is violated, i.e.
+the two nodes have different results stored for the same table.
+It is time to perform a repair!

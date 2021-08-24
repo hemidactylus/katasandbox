@@ -27,6 +27,9 @@ misalignments between nodes are kept to a minimum and limited to cases of actual
 data mismatch (and not simple placement in different SSTable pools), thus
 preventing the "overstreaming explosions" that could occur in previous versions.
 
+Both the transaction around the repair process and the existence of three
+separate pools of SSTables are improvements introduced in Cassandra 4.0.
+
 ### SSTable inspection
 
 Enough with the theory - let's look at the SSTables on Node2 now and at its
