@@ -1,5 +1,5 @@
 With the 4.0 release of Apache Cassandra™, there have been improvements to
-incremental repair: the process is now more reliable, robust, easier to manage
+incremental repair: the process is now more reliable and robust, easier to manage
 and ready for use in production.
 
 In this scenario you will:

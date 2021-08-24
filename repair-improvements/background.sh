@@ -6,14 +6,6 @@ wget https://downloads.apache.org/cassandra/4.0.0/apache-cassandra-4.0.0-bin.tar
 
 ssh root@[[HOST1_IP]] -o StrictHostKeyChecking=no "tar xzf apache-cassandra-4.0.0-bin.tar.gz"
 ssh root@[[HOST2_IP]] -o StrictHostKeyChecking=no "tar xzf apache-cassandra-4.0.0-bin.tar.gz"
-# ssh root@[[HOST1_IP]] "sed -i 's/^cluster_name: .*$/cluster_name: \"Cassandra Cluster\"/g' apache-cassandra-4.0.0/conf/cassandra.yaml"
-# ssh root@[[HOST2_IP]] "sed -i 's/^cluster_name: .*$/cluster_name: \"Cassandra Cluster\"/g' apache-cassandra-4.0.0/conf/cassandra.yaml"
-
-# ssh root@[[HOST1_IP]] "sed -i 's/^endpoint_snitch: .*$/endpoint_snitch: GossipingPropertyFileSnitch/g' apache-cassandra-4.0.0/conf/cassandra.yaml"
-# ssh root@[[HOST2_IP]] "sed -i 's/^endpoint_snitch: .*$/endpoint_snitch: GossipingPropertyFileSnitch/g' apache-cassandra-4.0.0/conf/cassandra.yaml"
-
-# ssh root@[[HOST1_IP]] "sed -i 's/^dc=.*$/dc=DC-West/g' apache-cassandra-4.0.0/conf/cassandra-rackdc.properties"
-# ssh root@[[HOST2_IP]] "sed -i 's/^dc=.*$/dc=DC-East/g' apache-cassandra-4.0.0/conf/cassandra-rackdc.properties"
 
 ssh root@[[HOST1_IP]] "sed -i 's/^listen_address:.*$/listen_address: [[HOST1_IP]]/g' apache-cassandra-4.0.0/conf/cassandra.yaml"
 ssh root@[[HOST2_IP]] "sed -i 's/^listen_address:.*$/listen_address: [[HOST2_IP]]/g' apache-cassandra-4.0.0/conf/cassandra.yaml"

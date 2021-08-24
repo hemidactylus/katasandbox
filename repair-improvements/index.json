@@ -1,8 +1,8 @@
 {
-  "title": "Repair Improvements 08",
-  "description": "Learn how to manage incremental repair in a Cassandra 4.0 cluster 08",
+  "title": "Repair Improvements",
+  "description": "Learn how to manage incremental repair in a Cassandra 4.0 cluster",
   "difficulty": "Medium",
-  "time": "20 minutes",
+  "time": "25 minutes",
   "details": {
     "assets": {
         "host01": [

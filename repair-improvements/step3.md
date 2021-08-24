@@ -92,9 +92,9 @@ down (and taken extra care to prevent other Cassandra self-healing mechanisms).
 At this point the SSTables on the two nodes are in disagreement: Node1
 "thinks" there are ten rows, Node2 "thinks" there are 112.
 
-We avoid checking this with explicit queries since they would likely trigger
+_NOTE:_ We avoid checking this with explicit queries since they would likely trigger
 the mechanism known as "read repair", designed to restore data consistency
-as a consequence of a read request and would void our efforts to artificially
+as a consequence of a read request; this would void our efforts to artificially
 create the mismatch in the first place!
 
 Currently, data consistency is violated, i.e.

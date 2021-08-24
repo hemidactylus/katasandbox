@@ -22,8 +22,8 @@ this can be verified with (**NOTE**: copy and paste the
 ```
 ls /usr/share/cassandra/data/data/chemistry/elements-<TABLE_ID>
 ```{{Execute T3}}
-(there should just be a `backups` subdirectory for incremental backups
-- we can ignore it here.)
+(there should just be a `backups` subdirectory for incremental backups - we
+  can ignore it here.)
 
 Now we can force a flush of all insertions to disk, by executing the following
 command on both nodes:
