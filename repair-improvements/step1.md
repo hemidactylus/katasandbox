@@ -57,7 +57,7 @@ cqlsh $HOST2_IP
 ```{{execute T7}}
 
 The following commands can be run on either CQL shells - we will work
-on node 1. First let us create a keyspace with replication factor of two,
+on Node1. First let us create a keyspace with replication factor of two,
 i.e. such that _all rows_ be replicated on _both nodes_:
 ```
 CREATE KEYSPACE chemistry WITH REPLICATION = {'class': 'SimpleStrategy', 'replication_factor': 2};
@@ -88,7 +88,7 @@ COPY elements FROM 'elements.csv' WITH HEADER=TRUE;
 ```{{execute T4}}
 
 To verify the insertion has succeeded, let's try to query the table (from
-  node 2, why not?). Let's look at some of the rows,
+  Node2, why not?). Let's look at some of the rows,
 ```
 USE chemistry;
 SELECT * FROM elements LIMIT 10;

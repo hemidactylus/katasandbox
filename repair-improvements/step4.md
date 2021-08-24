@@ -1,10 +1,10 @@
-We will launch an incremental repair on node2, expecting that
+We will launch an incremental repair on Node2, expecting that
 it will be able to restore consistency and align its SSTables to
-reflect the deletion of non-gaseous elements we executed on node1.
+reflect the deletion of non-gaseous elements we executed on Node1.
 
 ### Repairing data
 
-Let us initiate an incremental repair on node2, limited to our `elements` table.
+Let us initiate an incremental repair on Node2, limited to our `elements` table.
 Starting from Cassandra 2.2, incremental repair (as opposed to full repair)
 is the default, so we simply need to launch the command
 ```
@@ -29,9 +29,9 @@ preventing the "overstreaming explosions" that could occur in previous versions.
 
 ### SSTable inspection
 
-Enough with the theory - let's look at the SSTables on node2 now and at its
+Enough with the theory - let's look at the SSTables on Node2 now and at its
 "repair status", as we did in Step 2, by running
-the following on the console of node2:
+the following on the console of Node2:
 ```
 ls /usr/share/cassandra/data/data/chemistry/elements-<TABLE_ID>
 ```{{Execute T6}}
@@ -76,7 +76,7 @@ past repair operations, and can be also used to stop a running repair
 (on the same node it is executed on, but also on another node with a `--force`
 option).
 
-Run the following command on the console of node2 to see the repair you just
+Run the following command on the console of Node2 to see the repair you just
 performed (withouth the `--all` flag you would only see
   currently-running repairs):
 ```
@@ -96,9 +96,9 @@ SELECT parent_id, coordinator, coordinator_port, last_update, repaired_at, start
 ### Last test
 
 Has the data really been repaired? Let us check with a final test:
-we now bring down node1 and then query the `elements` table from node2!
+we now bring down Node1 and then query the `elements` table from Node2!
 
-Let us shutdown Cassandra on node1, by running this command in its console:
+Let us shut down Cassandra on Node1, by running this command in its console:
 ```
 nodetool stopdaemon
 ```{{execute T3}}
@@ -109,20 +109,19 @@ consistency levels of the queries being run, this might disrupt operativity
 of the applications.
 
 You should see the command announcing that Cassandra is stopped. Now there is
-only node2, so we are effectively looking at the contents of its own SSTable
-files. Let's query the `elements` table on node2's `cqlsh`:
+only Node2, so we are effectively looking at the contents of its own SSTable
+files. Let's query the `elements` table on Node2's `cqlsh`:
 ```
 SELECT * FROM chemistry.elements;
 ```{{execute T7}}
 
 If you see just a handful of gaseous elements, congratulations! Consistency
 has been successfully restored by bringing the latest changes on the table
-from node1 over to this node.
-Incremental repair has done its job.
+from Node1 over to this node: **incremental repair has done its job**.
 
 ### Recap
 
-We have repaired the table on node2 in an incremental way and verified data
+We have repaired the table on Node2 in an incremental way and verified data
 consistency in the strictest way, i.e. by turning off the other node
 and querying the repaired one.
 
