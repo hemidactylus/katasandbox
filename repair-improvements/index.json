@@ -1,6 +1,6 @@
 {
-  "title": "Repair Improvements 05",
-  "description": "Learn how to manage incremental repair in a Cassandra 4.0 cluster 05",
+  "title": "Repair Improvements 06",
+  "description": "Learn how to manage incremental repair in a Cassandra 4.0 cluster 06",
   "difficulty": "Medium",
   "time": "20 minutes",
   "details": {
@@ -18,12 +18,20 @@
     },
     "steps": [
       {
-        "title": "Setup & Create Data",
+        "title": "Setup & create data",
         "text": "step1.md"
       },
       {
         "title": "Fun with SSTables",
         "text": "step2.md"
+      },
+      {
+        "title": "The need for repair",
+        "text": "step3.md"
+      },
+      {
+        "title": "Incremental repair",
+        "text": "step4.md"
       },
       {
         "title": "Test Your Understanding",

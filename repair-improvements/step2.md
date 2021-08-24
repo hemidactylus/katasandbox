@@ -17,7 +17,7 @@ The output will be something similar to
 
 Since the rows we just inserted are just a few, probably the data directory
 is still empty: this can be verified with (**NOTE**: copy and paste the
-  actual ID for the command to succeed):
+  actual ID in the command before executing):
 ```
 ls /usr/share/cassandra/data/data/chemistry/elements-<TABLE_ID>
 ```{{Execute T3}}
@@ -49,7 +49,7 @@ command (**NOTE**: again, replace the actual table ID and the SSTable
   file name for the command to work):
 ```
 sstablemetadata /usr/share/cassandra/data/data/chemistry/elements-<TABLE_ID>/<SSTABLE_ROOT_NAME>-Data.db
-```{{Execute T3}}
+```{{execute T3}}
 
 Look for the repair information in the output: there should be two lines such as:
 ```
@@ -61,3 +61,12 @@ Pending repair: --
 
 meaning that the table has never been repaired before, and is not currently
 in the pending-repair pool of any running repair respectively.
+
+### Recap
+
+We have forced a data flush to disk to make sure our SSTable files
+are up-to-date; indeed the files are there and, as expected, have
+never undergone any repair operation (...yet).
+
+Now it's time to engineer a data misalignment between the two nodes,
+to later see incremental repair in action!
